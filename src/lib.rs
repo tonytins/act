@@ -1,70 +1,70 @@
-/*!
- Act is a simple engine for making simple, text-based adventure games.
- It's on [crates.io](https://crates.io/crates/act) and on [GitHub](https://github.com/ichy-wayland/act)!
- # Examples
- ```
-extern crate act;
-
- use act::load_game;
-
- fn main() {
-     // Create a string containing our Act game
-     let game_string = r#"
-     {
-        "rooms": [
-            {
-                "name": "start",
-                "scene": "Im a starting room! Welcome to this example game.",
-                "actions": [
-                    {
-                        "variant": "Move",
-                        "fields": [
-                            "Move to another room","example",""
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "example",
-                "scene": "You enter an example room, with a big, triangular key in it. Theres also a door with a keyhole in triangular shape.",
-                "actions": [
-                    {
-                        "variant": "PickUp",
-                        "fields": [
-                            "Pick the key up","TriangleKey",""
-                        ]
-                    },
-                    {
-                        "variant": "Move",
-                        "fields": [
-                            "Try to open the door","locked","TriangleKey"
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "locked",
-                "scene": "You picked an item up and used it to open the door! This is the final room. Congratz!",
-                "actions": [
-                    {
-                        "variant": "Move",
-                        "fields": [
-                            "Move to another room","example",""
-                        ]
-                    }
-                ]
-            }
-        ]
-     }
-     "#;
-     // Load the game into a proper Game struct
-     let mut game = load_game(game_string).unwrap();
-     // Start the game
-     game.play();
-     // Profit!
- }
- ```
-*/
+//!
+//! Act is a simple engine for making simple, text-based adventure games.
+//! It's on [crates.io](https://crates.io/crates/act) and on [GitHub](https://github.com/ichy-wayland/act)!
+//! # Examples
+//! ```rust
+//!extern crate act;
+//!
+//! use act::load_game;
+//!
+//!fn main() {
+//!     // Create a string containing our Act game
+//!     let game_string = r#"
+//!     {
+//!        "rooms": [
+//!            {
+//!                "name": "start",
+//!                "scene": "Im a starting room! Welcome to this example game.",
+//!                "actions": [
+//!                    {
+//!                        "variant": "Move",
+//!                        "fields": [
+//!                            "Move to another room","example",""
+//!                        ]
+//!                    }
+//!                ]
+//!            },
+//!            {
+//!                "name": "example",
+//!                "scene": "You enter an example room, with a big, triangular key in it. Theres also a door with a keyhole in triangular shape.",
+//!                "actions": [
+//!                    {
+//!                        "variant": "PickUp",
+//!                        "fields": [
+//!                            "Pick the key up","TriangleKey",""
+//!                        ]
+//!                    },
+//!                    {
+//!                        "variant": "Move",
+//!                        "fields": [
+//!                            "Try to open the door","locked","TriangleKey"
+//!                        ]
+//!                    }
+//!                ]
+//!            },
+//!            {
+//!                "name": "locked",
+//!                "scene": "You picked an item up and used it to open the door! This is the final room. Congratz!",
+//!                "actions": [
+//!                    {
+//!                        "variant": "Move",
+//!                        "fields": [
+//!                            "Move to another room","example",""
+//!                        ]
+//!                    }
+//!                ]
+//!            }
+//!        ]
+//!     }
+//!     "#;
+//!     // Load the game into a proper Game struct
+//!     let mut game = load_game(game_string).unwrap();
+//!     // Start the game
+//!     game.play();
+//!     // Profit!
+//! }
+//!```
+//!
 
 extern crate rustc_serialize;
 extern crate ansi_escapes;
@@ -168,13 +168,13 @@ impl Game {
 
         println!("Made with \n");
         print!("
-      _/           _//   _/// _//////
+      _/           _//   _//! _//!//!
      _/ //      _//   _//     _//
     _/  _//    _//            _//
    _//   _//   _//            _//
-  _////// _//  _//            _//
+  _//!//! _//  _//            _//
  _//       _//  _//   _//     _//
-_//         _//   _////       _//
+_//         _//   _//!/       _//
 \n");
         println!("Make your own game at github.com/ichy-wayland/act");
         thread::sleep(time::Duration::from_millis(4000));
