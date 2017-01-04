@@ -1,6 +1,6 @@
 [package]
 name = "act"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Dimitri Wayland <dimitrischeibe@gmail.com>"]
 description = "Act is a simple engine for making simple, text-based adventure games"
 homepage = "https://github.com/ichy-wayland/act"
