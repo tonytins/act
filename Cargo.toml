@@ -7,7 +7,7 @@ homepage = "https://github.com/ichy-wayland/act"
 repository = "https://github.com/ichy-wayland/act"
 readme = "README.md"
 keywords = ["terminal","adventure","game","engine"]
-license = "Copyrightless"
+license = "Unlicense"
 
 [dependencies]
 rustc-serialize = "0.3.19"

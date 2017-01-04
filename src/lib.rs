@@ -3,6 +3,8 @@
  It's on [crates.io](https://crates.io/crates/act) and on [GitHub](https://github.com/ichy-wayland/act)!
  # Examples
  ```
+extern crate act;
+
  use act::load_game;
 
  fn main() {
@@ -39,7 +41,7 @@
                         ]
                     }
                 ]
-            }
+            },
             {
                 "name": "locked",
                 "scene": "You picked an item up and used it to open the door! This is the final room. Congratz!",
@@ -54,9 +56,9 @@
             }
         ]
      }
-     "#
+     "#;
      // Load the game into a proper Game struct
-     let game = load_game(game_string).unwrap();
+     let mut game = load_game(game_string).unwrap();
      // Start the game
      game.play();
      // Profit!
