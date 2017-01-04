@@ -1,13 +1,16 @@
 //!
 //! Act is a simple engine for making simple, text-based adventure games.
+//!
 //! It's on [crates.io](https://crates.io/crates/act) and on [GitHub](https://github.com/ichy-wayland/act)!
+//!
 //! # Examples
+//!
 //! ```rust
-//!extern crate act;
+//! extern crate act;
 //!
 //! use act::load_game;
 //!
-//!fn main() {
+//! fn main() {
 //!     // Create a string containing our Act game
 //!     let game_string = r#"
 //!     {
@@ -63,7 +66,7 @@
 //!     game.play();
 //!     // Profit!
 //! }
-//!```
+//! ```
 //!
 
 extern crate rustc_serialize;
